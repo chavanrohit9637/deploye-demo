@@ -1,0 +1,18 @@
+/* rating.component.css */
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    position: relative;
+    font-size: 18px;
+  }
+  
+  .star {
+    display: inline-block;
+    pointer-events: none; /* Disable pointer events to make it read-only */
+  }
+  
+  .full {
+    color: goldenrod;
+  }
+  

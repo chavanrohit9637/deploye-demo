@@ -1,0 +1,45 @@
+
+
+<div class="body">
+   <app-loader [loading]="isLoading"></app-loader>
+    <div class="form-container">
+    <form [formGroup]="loginForm">
+      <div class="form-box">
+        <h2>Login</h2>
+   <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="Enter Email" type="email">
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+    <span class="text-danger"
+    *ngIf="(loginFormControl.email.touched || submitted) && loginFormControl.email.errors?.required">
+    Email is required
+</span>
+<span class="text-danger"
+       *ngIf="loginFormControl.email.touched && loginFormControl.email.errors?.email">
+       Enter a valid email address
+         </span>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" placeholder="Enter Password" type="password">
+      <mat-icon matSuffix>password</mat-icon>
+    </mat-form-field>
+    <span class="text-danger"
+    *ngIf="(loginFormControl.password.touched || submitted) && loginFormControl.password.errors?.required">
+    Password is required
+</span>
+    <span class="text-danger"
+                                *ngIf="loginFormControl.password.touched && loginFormControl.password.errors?.invalidPassword">
+                                Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+                                letter and 1 number
+                            </span>
+  </p>
+  <button mat-raised-button color="primary" (click)="onSubmit()">Login</button> <a routerLink="/auth/sign-up" style="padding-left: 10px;">click here to register</a>
+</div>  
+</form>
+</div>
+</div>
+

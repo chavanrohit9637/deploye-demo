@@ -1,0 +1,137 @@
+
+<div class="card-list">
+<div class="container">
+
+  <div class="row" id="box">
+    <div class="col-9">
+      <p> List of Courses , You can add or delete the courses</p>
+    </div>
+    <div class="col-3">
+      <button mat-raised-button color="primary" class="card-action" (click)="openAddCourseDialog()">Add Course</button>
+    </div>
+  </div>
+  <br>
+  
+  <div class="row">
+      <div *ngFor="let course of data" class="col-12 col-sm-6 col-md-4 col-lg-3">
+      
+        <mat-card class="example-card">
+          
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title>{{course.title}}</mat-card-title>
+              <mat-card-subtitle><app-rating [maxRating]="5" [rating]="4"></app-rating></mat-card-subtitle>
+              
+              <img mat-card-md-image src={{course.logo}} alt="Image of a Shiba Inu">
+            </mat-card-title-group>
+          </mat-card-header>
+          <mat-card-content>
+            {{course.subtitle}}
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="openDeleteCourse(course.id)">Delete</button>
+            <button mat-raised-button color="primary" class="card-action" (click)="openUpdateCourse(course)">Update</button>
+          </mat-card-actions>
+        </mat-card>
+  
+     
+    </div>
+
+
+
+    <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Java Full-Stack Developer</mat-card-title>
+            <mat-card-subtitle><app-rating [maxRating]="5" [rating]="3"></app-rating></mat-card-subtitle>
+            
+            <img mat-card-md-image src="https://miro.medium.com/v2/resize:fit:1200/0*oHmV227AMN-eIpcj.jpg"  alt="Image of a Shiba Inu">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          Develop Dynamic Web Applications with Java. Master Java programming, Angular for responsive front-end web development, and Spring and Spring Boot for robust back-end systems.
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Register</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Anguler Developer</mat-card-title>
+            <mat-card-subtitle><app-rating [maxRating]="5" [rating]="4"></app-rating></mat-card-subtitle>
+            
+            <img mat-card-md-image src="https://www.amarinfotech.com/wp-content/uploads/2018/05/Hire-AngularJs-Developer-1.jpg">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          The Angular libraries include routing, forms management, client-server communication, and more.
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Register</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>React Developer</mat-card-title>
+            <mat-card-subtitle><app-rating [maxRating]="5" [rating]="4"></app-rating></mat-card-subtitle>
+            
+            <img mat-card-md-image src="https://images.ctfassets.net/aq13lwl6616q/26YihBS082ssqu55s02tHb/827b9471c4660d9716d7a896b25dc204/Become_a_React_Developer.jpg">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          A React developer uses their programming skills to create JavaScript-based applications for web or mobile environments. They typically specialize in front-end development.
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Register</button>
+        </mat-card-actions>
+
+        
+      </mat-card>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>React Developer</mat-card-title>
+            <mat-card-subtitle><app-rating [maxRating]="5" [rating]="4"></app-rating></mat-card-subtitle>
+            
+            <img mat-card-md-image src="https://images.ctfassets.net/aq13lwl6616q/26YihBS082ssqu55s02tHb/827b9471c4660d9716d7a896b25dc204/Become_a_React_Developer.jpg">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          A React developer uses their programming skills to create JavaScript-based applications for web or mobile environments. They typically specialize in front-end development.
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Register</button>
+        </mat-card-actions>
+      </mat-card>
+    </div> -->
+
+
+
+
+
+
+    <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      Content for small screens and above4
+    </div> -->
+</div>
+
+
+
+<mat-paginator [length]="totalCourses"
+              [pageSize]="pageLimit"
+             (page)="changePage($event)"
+              [pageSizeOptions]="[2,4,8]"
+              aria-label="Select page">
+</mat-paginator>
+</div>
+
+</div>

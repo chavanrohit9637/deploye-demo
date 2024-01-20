@@ -1,0 +1,14 @@
+.home-body{
+    margin: 25px;
+}
+.parent{
+    text-align:center;
+    margin: 40px;
+  }
+  
+      #heading{
+       display:inline-block;
+       display:inline;
+       zoom:1;
+       text-align:left;
+      }

@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>Update Course</h2>
+<mat-dialog-content [formGroup]="addCourseFrom">
+    <p class="start">
+        <mat-form-field appearance="outline">
+          <mat-label>Title</mat-label>
+          <input matInput placeholder="Enter title" formControlName="title" type="text">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Subtitle</mat-label>
+          <input matInput placeholder="Enter subtitle" formControlName="subtitle" type="text">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Logo</mat-label>
+          <input matInput placeholder="Enter logo URL" formControlName="logo" type="text">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Rating</mat-label>
+          <input matInput placeholder="Enter rating" formControlName="rating" type="text">
+        </mat-form-field>
+      </p>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="close()" >Cancel</button>
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button mat-raised-button color="primary" (click)="OnSubmit()" >Save</button>
+</mat-dialog-actions>
